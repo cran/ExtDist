@@ -1,10 +1,19 @@
+---
+title: "Normal distribution"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Distributions-Normal}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
 <!--
 %\VignetteEngine{knitr::rmarkdown}
 %\VignetteIndexEntry{Distributions-Normal}
 \usepackage{amsmath,amssymb}
 -->
 
-Normal Distribution
+<!--Normal Distribution-->
 ========================================================
 
 Probability density function:

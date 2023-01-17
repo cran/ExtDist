@@ -1,5 +1,5 @@
 Package: ExtDist
-Version: 0.6-4
+Version: 0.7-1
 License: GPL (>= 2)
 Title: Extending the Range of Functions for Probability Distributions
 Description: A consistent, unified and extensible
@@ -16,5 +16,7 @@ Suggests: ggplot2, knitr, PerformanceAnalytics, stats, SuppDists,
         truncdist, VGAM, xtable, graphics, utils, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-12-04 14:00:23 UTC; oni062
-Date/Publication: 2020-12-07 22:40:06 UTC
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+Packaged: 2023-01-17 10:19:28 UTC; oni062
+Date/Publication: 2023-01-17 13:00:02 UTC

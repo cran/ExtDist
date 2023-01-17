@@ -1,10 +1,19 @@
+---
+title: "Distributions included in the ExtDist package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Distributions-Index}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
 <!--
 %\VignetteEngine{knitr::rmarkdown}
 %\VignetteIndexEntry{Distributions-Index}
 \usepackage{amsmath,amssymb}
 -->
 
-Distributions included in the ExtDist package
+<!--Distributions included in the ExtDist package-->
 ========================================================
 * [The standard beta distribution](Distributions-Beta.html)
 * The four-parameter beta distribution.
