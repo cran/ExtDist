@@ -14,15 +14,28 @@
 
 <title>Distributions included in the ExtDist package</title>
 
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
@@ -222,7 +235,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<h1 class="title toc-ignore">Distributions included in the ExtDist package</h1>
+<h1 class="title toc-ignore">Distributions included in the ExtDist
+package</h1>
 
 
 
@@ -234,7 +248,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="section" class="section level1">
 <h1><!--Distributions included in the ExtDist package--></h1>
 <ul>
-<li><a href="Distributions-Beta.html">The standard beta distribution</a></li>
+<li><a href="Distributions-Beta.html">The standard beta
+distribution</a></li>
 <li>The four-parameter beta distribution.</li>
 <li>The Burr’s distribution.</li>
 <li>The gamma distribution.</li>
@@ -247,7 +262,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <li>The symmetric truncated normal distribution.</li>
 <li>The truncated normal distribution.</li>
 <li>The symmetric-reflected truncated beta (SRTB) distribution.</li>
-<li>The standard symmetric-reflected truncated beta (SRTB) distribution.</li>
+<li>The standard symmetric-reflected truncated beta (SRTB)
+distribution.</li>
 <li>The triangular distribution.</li>
 <li>The uniform distribution.</li>
 <li>The Weibull distribution.</li>

@@ -14,15 +14,28 @@
 
 <title>Normal distribution</title>
 
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
@@ -235,7 +248,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1><!--Normal Distribution--></h1>
 <div id="probability-density-function" class="section level2">
 <h2>Probability density function:</h2>
-<p><span class="math display">\[f(x) = \frac 1 {\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2} {2\sigma^2}}\]</span> with <span class="math inline">\(\mu\)</span> the mean of the distribution and <span class="math inline">\(\sigma\)</span> the standard deviation</p>
+<p><span class="math display">\[f(x) = \frac 1 {\sigma\sqrt{2\pi}}
+e^{-\frac{(x-\mu)^2} {2\sigma^2}}\]</span> with <span class="math inline">\(\mu\)</span> the mean of the distribution and
+<span class="math inline">\(\sigma\)</span> the standard deviation</p>
 <!--
 ```
 Mathematica Code: 
@@ -245,9 +260,12 @@ Mathematica Code:
 </div>
 <div id="cumulative-distribution-function" class="section level2">
 <h2>Cumulative distribution function:</h2>
-<p><span class="math display">\[F(x) =\int_{-\infty}^{x}\frac 1 {\sigma\sqrt{2\pi}} e^{-\frac{(y-\mu)^2} {2\sigma^2}}dy
-       =\int_{-\infty}^{\frac {x-\mu}{\sigma}}\frac 1 {\sqrt{2\pi}} e^{-\frac{z^2} {2}}dz
-       =\frac 1 2 \left[1+\text{erf}\left(\frac {x-\mu} {\sigma\sqrt{2}} \right)\right]\]</span> with <span class="math inline">\(\text{erf}\)</span> being the error function.</p>
+<p><span class="math display">\[F(x) =\int_{-\infty}^{x}\frac 1
+{\sigma\sqrt{2\pi}} e^{-\frac{(y-\mu)^2} {2\sigma^2}}dy
+       =\int_{-\infty}^{\frac {x-\mu}{\sigma}}\frac 1 {\sqrt{2\pi}}
+e^{-\frac{z^2} {2}}dz
+       =\frac 1 2 \left[1+\text{erf}\left(\frac {x-\mu} {\sigma\sqrt{2}}
+\right)\right]\]</span> with <span class="math inline">\(\text{erf}\)</span> being the error function.</p>
 <!--
 ```
 Mathematica Code: 
@@ -257,7 +275,8 @@ Integrate[1/sqrt(2*pi)*e^(-z^2/2),{z,-Infinity,(x-mu)/sigma}]
 </div>
 <div id="log-likelihood-function" class="section level2">
 <h2>Log-likelihood function:</h2>
-<p><span class="math display">\[L(\mu,\sigma;X)=\sum_i\left[-\frac 1 2 \ln(2\pi)-\ln(\sigma)-\frac{1}{2\sigma^2}(X_i-\mu)^2\right]\]</span></p>
+<p><span class="math display">\[L(\mu,\sigma;X)=\sum_i\left[-\frac 1 2
+\ln(2\pi)-\ln(\sigma)-\frac{1}{2\sigma^2}(X_i-\mu)^2\right]\]</span></p>
 <!--
 ```
 Mathematica Code: 
@@ -268,13 +287,13 @@ log[1/(sigma sqrt(2 pi)) e^(-(x-mu)^2/(2 sigma^2))]-(x - mu)^2/(2 sigma^2) - Log
 <div id="score-function-vector" class="section level2">
 <h2>Score function vector:</h2>
 <p><span class="math display">\[V(\mu,\sigma;X)
- =\left( \begin{array}{c}
+=\left( \begin{array}{c}
         \frac{\partial L}{\partial \mu}  \\
         \frac{\partial L}{\partial \sigma}
         \end{array} \right)
- =\sum_i\left( \begin{array}{c}
+=\sum_i\left( \begin{array}{c}
               \frac {X_i-\mu}{\sigma^2} \\
-              \frac {(X_i-\mu)^2-\sigma^2}{\sigma^3} 
+              \frac {(X_i-\mu)^2-\sigma^2}{\sigma^3}
               \end{array} \right)
 \]</span></p>
 <!--
@@ -289,13 +308,16 @@ D[-(x - mu)^2/(2 sigma^2) - Log[2 Pi]/2 - Log[sigma],sigma]
 <h2>Observed information matrix:</h2>
 <p><span class="math display">\[\mathcal J (\mu,\sigma;X)=
    -\left( \begin{array}{cc}
-          \frac{\partial^2 L}{\partial \mu^2} &amp; \frac{\partial^2 L}{\partial \mu \partial \sigma} \\
-          \frac{\partial^2 L}{\partial \sigma \partial \mu} &amp; \frac{\partial^2 L}{\partial \sigma^2} \end{array} \right)
- =\sum_i
- \left( \begin{array}{cc}
+          \frac{\partial^2 L}{\partial \mu^2} &amp; \frac{\partial^2
+L}{\partial \mu \partial \sigma} \\
+          \frac{\partial^2 L}{\partial \sigma \partial \mu} &amp;
+\frac{\partial^2 L}{\partial \sigma^2} \end{array} \right)
+=\sum_i
+\left( \begin{array}{cc}
        \frac{1}{\sigma^2} &amp; \frac{2(X_i-\mu)}{\sigma^3} \\
-       \frac{2(X_i-\mu)}{\sigma^3} &amp; \frac{3(X_i-\mu)^2-\sigma^2}{\sigma^4} \end{array} \right)
- \]</span></p>
+       \frac{2(X_i-\mu)}{\sigma^3} &amp;
+\frac{3(X_i-\mu)^2-\sigma^2}{\sigma^4} \end{array} \right)
+\]</span></p>
 <!--
 ```
 Mathematica Code: 

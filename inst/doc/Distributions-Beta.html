@@ -14,15 +14,28 @@
 
 <title>Beta distribution</title>
 
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
@@ -235,7 +248,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1><!--Beta distribution--></h1>
 <div id="probability-density-function" class="section level2">
 <h2>Probability density function:</h2>
-<p><span class="math display">\[f(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}} {\mathcal{B}(\alpha,\beta)}\]</span> with <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> two shape parameters and <span class="math inline">\(\mathcal B\)</span> beta function.</p>
+<p><span class="math display">\[f(x) =
+\frac{x^{\alpha-1}(1-x)^{\beta-1}} {\mathcal{B}(\alpha,\beta)}\]</span>
+with <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> two shape parameters and <span class="math inline">\(\mathcal B\)</span> beta function.</p>
 <!--
 ```
 Mathematica Code: 
@@ -245,8 +260,10 @@ Mathematica Code:
 </div>
 <div id="cumulative-distribution-function" class="section level2">
 <h2>Cumulative distribution function:</h2>
-<p><span class="math display">\[F(x) = \frac{\int_{0}^{x} y^{\alpha-1}(1-y)^{\beta-1}dy} {\mathcal{B}(\alpha,\beta)}
-=\mathcal{B}(x; \alpha,\beta)\]</span> with <span class="math inline">\(\mathcal B (x; \alpha,\beta)\)</span> incomplete beta function.</p>
+<p><span class="math display">\[F(x) = \frac{\int_{0}^{x}
+y^{\alpha-1}(1-y)^{\beta-1}dy} {\mathcal{B}(\alpha,\beta)}
+=\mathcal{B}(x; \alpha,\beta)\]</span> with <span class="math inline">\(\mathcal B (x; \alpha,\beta)\)</span> incomplete
+beta function.</p>
 <!--
 ```
 Mathematica Code: 
@@ -256,7 +273,9 @@ Integrate[(x^(alpha-1) (1-x)^(beta-1))/(beta(alpha, beta)),{x,0,y}]
 </div>
 <div id="log-likelihood-function" class="section level2">
 <h2>Log-likelihood function:</h2>
-<p><span class="math display">\[L(\alpha,\beta;X)=\sum_i\left[ (\alpha-1)\ln(x)+(\beta-1)\ln(1-x)-\ln \mathcal{B}(\alpha,\beta) \right]\]</span></p>
+<p><span class="math display">\[L(\alpha,\beta;X)=\sum_i\left[
+(\alpha-1)\ln(x)+(\beta-1)\ln(1-x)-\ln \mathcal{B}(\alpha,\beta)
+\right]\]</span></p>
 <!--
 ```
 Mathematica Code: 
@@ -274,9 +293,10 @@ Mathematica Code:
     =\sum_i
     \left( \begin{array}{c}
     \psi^{(0)}(\alpha+\beta)-\psi^{(0)}(\alpha)+\ln(x) \\
-    \psi^{(0)}(\alpha+\beta)-\psi^{(0)}(\beta)+\ln(x) 
+    \psi^{(0)}(\alpha+\beta)-\psi^{(0)}(\beta)+\ln(x)
     \end{array} \right)
-    \]</span> with <span class="math inline">\(\psi^{(0)}\)</span> being log-gamma function.</p>
+    \]</span> with <span class="math inline">\(\psi^{(0)}\)</span> being
+log-gamma function.</p>
 <!--
 ```
 Mathematica Code: 
@@ -289,9 +309,12 @@ D[(alpha-1)log(x)+(beta-1)log(1-x)-log(beta(alpha,beta)),beta]
 <h2>Observed information matrix:</h2>
 <p><span class="math display">\[\mathcal J (\mu,\sigma;X)=
     \left( \begin{array}{cc}
-    \psi^{(1)}(\alpha)-\psi^{(1)}(\alpha+\beta) &amp; -\psi^{(1)}(\alpha+\beta) \\
-    -\psi^{(1)}(\alpha+\beta) &amp; \psi^{(1)}(\beta)-\psi^{(1)}(\alpha+\beta) \end{array} \right)
-    \]</span> with <span class="math inline">\(\psi^{(1)}\)</span> being digamma function.</p>
+    \psi^{(1)}(\alpha)-\psi^{(1)}(\alpha+\beta) &amp;
+-\psi^{(1)}(\alpha+\beta) \\
+    -\psi^{(1)}(\alpha+\beta) &amp;
+\psi^{(1)}(\beta)-\psi^{(1)}(\alpha+\beta) \end{array} \right)
+    \]</span> with <span class="math inline">\(\psi^{(1)}\)</span> being
+digamma function.</p>
 <!--
 ```
 Mathematica Code: 
