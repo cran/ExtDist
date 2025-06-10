@@ -1,4 +1,4 @@
-376704f8c16626184f0876c0648906a7 *DESCRIPTION
+76559ea7e7bc615c53257be0298a738a *DESCRIPTION
 0d483c051d545085a9d96568a0436105 *NAMESPACE
 0765c792a020d20783fc7777a067d7f0 *R/Beta.R
 306fc4bbf7f93d0615a7be555d75b269 *R/Beta_ab.R
@@ -24,17 +24,17 @@ ae7735a0a8eeea7b26c1d4045ea79930 *R/bestDist.R
 a8006ff1a79ae8e677e2c585cedae933 *R/eDist.R
 ee445c998d7ef15d0c0ee9b87b1f81d3 *R/eval.estimation.R
 b87ebf93114b038d9d2e4fe145463f34 *R/wmle.R
-13550e09523044e0c5065535f648b5df *README.md
-d878e7c02386bcd1ef6ef93d72d3bd0c *build/vignette.rds
+53c2194a816f87ff5d3a5e38103b323a *README.md
+fe25de5659df3d9507b5b658a864014a *build/vignette.rds
 f3fbe5cc96542a197fc733dd362ccbb0 *inst/doc/Distributions-Beta.Rmd
 e5a975b36e570796540ff381d87df3b1 *inst/doc/Distributions-Beta.html
 58f938cedbd460a0a25cbb7f2da67e76 *inst/doc/Distributions-Normal.Rmd
 6f8fb729112bc8daf2bbd7530560ed70 *inst/doc/Distributions-Normal.html
 54e147fec917b7fa9007d917af900696 *inst/doc/Distributions.Rmd
 e8987e7b0c7eee84410af7188accb9ba *inst/doc/Distributions.html
-0bc74b179b9e4f82d3283e6c7c814e05 *inst/doc/ParaEst-and-DistSel-by-ExtDist.R
+a596f9e39c4460923316ecac4cca27a9 *inst/doc/ParaEst-and-DistSel-by-ExtDist.R
 f19fcbfa7750b8b19b567e03626dd9bf *inst/doc/ParaEst-and-DistSel-by-ExtDist.Rmd
-dcdbae49d02d653564f03e932afc1c55 *inst/doc/ParaEst-and-DistSel-by-ExtDist.pdf
+8e0ec8b527269d57cb56802ec3d5e7d8 *inst/doc/ParaEst-and-DistSel-by-ExtDist.pdf
 5073d01f8503a07111b23bf75a6c40dc *man/Beta.Rd
 f1f6f906d83667365f389d71f5659d4f *man/Beta_ab.Rd
 b310eedb6f95b636c7e61ed189bfbd71 *man/Burr.Rd

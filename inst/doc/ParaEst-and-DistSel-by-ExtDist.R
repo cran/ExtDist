@@ -1,4 +1,4 @@
-## ---- message=FALSE-----------------------------------------------------------
+## ----message=FALSE------------------------------------------------------------
 library(ExtDist)
 
 ## ----Data, comment=""---------------------------------------------------------
@@ -17,7 +17,7 @@ pWeibull(seq(0,2,0.4), params = est.par)
 qWeibull(seq(0,1,0.2), params = est.par)
 rWeibull(10, params = est.par)
 
-## ---- results='hide'----------------------------------------------------------
+## ----results='hide'-----------------------------------------------------------
 dWeibull(seq(0,2,0.4), shape = est.par$shape, scale = est.par$scale)
 pWeibull(seq(0,2,0.4), shape = est.par$shape, scale = est.par$scale)
 qWeibull(seq(0,1,0.2), shape = est.par$shape, scale = est.par$scale)
